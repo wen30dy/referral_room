@@ -1,8 +1,5 @@
 /** code by webdevtrick ( https://webdevtrick.com ) **/
-body {
-	margin: 0;
-	padding: 0;
-}
+
 .main {
 	max-height: 350px;;
 	background-color: #292c2f;
@@ -23,30 +20,18 @@ footer{
 	text-align: left;
 	font: bold 12px sans-serif;
 
-	padding: 55px 50px;
+	padding: 10px 50px;
 	margin-top: 40px;
 }
 
 .footer-distributed .footer-left,
-.footer-distributed .footer-center,
 .footer-distributed .footer-right{
 	display: inline-block;
 	vertical-align: top;
+	margin: auto;
 }
 
-.footer-distributed .footer-left{
-	width: 40%;
-}
 
-.footer-distributed h3{
-	color:  #ffffff;
-	font: normal 36px 'Cookie', cursive;
-	margin: 0;
-}
-
-.footer-distributed h3 span{
-	color:  #5383d3;
-}
 
 
 .footer-distributed .footer-links{
@@ -69,74 +54,13 @@ footer{
 	margin: 0;
 }
 
-
-.footer-distributed .footer-center{
-	width: 35%;
-}
-
-.footer-distributed .footer-center i{
-	background-color:  #33383b;
-	color: #ffffff;
-	font-size: 20px;
-	width: 38px;
-	height: 30px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 40px;
-	margin: 10px 15px;
-	vertical-align: middle;
-}
-
-.footer-distributed .footer-center i.fa-envelope{
-	font-size: 17px;
-	line-height: 38px;
-}
-
-.footer-distributed .footer-center p{
-	display: inline-block;
-	color: #ffffff;
-	vertical-align: middle;
-	margin:0;
-}
-
-.footer-distributed .footer-center p span{
-	display:block;
-	font-weight: normal;
-	font-size:14px;
-	line-height:2;
-}
-
-.footer-distributed .footer-center p a{
-	color:  #5383d3;
-	text-decoration: none;;
-}
-
 .footer-distributed .footer-right{
 	width: 20%;
 }
 
-.footer-distributed .footer-company-about{
-	line-height: 20px;
-	color:  #92999f;
-	font-size: 13px;
-	font-weight: normal;
-	margin: 0;
-}
-
-.footer-distributed .footer-company-about span{
-	display: block;
-	color:  #ffffff;
-	font-size: 14px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-
-.footer-distributed .footer-icons{
-	margin-top: 25px;
-}
 
 .footer-distributed .footer-icons a{
-	display: inline-block;
+	/* display: inline-block; */
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
@@ -161,7 +85,6 @@ footer{
 	}
 
 	.footer-distributed .footer-left,
-	.footer-distributed .footer-center,
 	.footer-distributed .footer-right{
 		display: block;
 		width: 100%;
@@ -169,9 +92,6 @@ footer{
 		text-align: center;
 	}
 
-	.footer-distributed .footer-center i{
-		margin-left: 0;
-	}
 	.main {
 		line-height: normal;
 		font-size: auto;
