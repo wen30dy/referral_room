@@ -1,0 +1,24 @@
+<%-include('../partials/header')%>
+
+<div class="row justify-content-center">
+    <div class="text-center my-5 col-md-6">
+        <h2 class="display-4">Vacancies from top companies all at one place.</h2>
+        <br>
+        <h1>Looking for something more ?
+            Please mail it up..</h1>    
+    </div>
+</div>
+
+<% jobs.forEach(function(job){%>
+<div class="row justify-content-center my-5">
+    <div class="col-4"><img class="jobs-images" src="<%=job.image%>" alt="image" ></div>
+    <div class="col-4"><h4><%=job.name%></h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, exercitationem!</p>
+    </div>
+</div>
+<% })%>
+
+
+<%-include('../partials/footer')%>
+
+
