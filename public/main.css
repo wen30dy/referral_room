@@ -1,5 +1,19 @@
 /** code by webdevtrick ( https://webdevtrick.com ) **/
-
+body{
+	/* background-color: rgb(112, 111, 111); */
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	background-image: url("https://cdn.pixabay.com/photo/2016/03/09/09/22/workplace-1245776_960_720.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover; 
+	background-size: cover; 
+	background-repeat: no-repeat;
+	width: 100%;
+	height:100%;
+position: absolute;
+overflow: auto;
+}
 .main {
 	max-height: 350px;;
 	background-color: #292c2f;
@@ -98,8 +112,122 @@ footer{
 	}
 
 }
-/* _____________________________________	JOBS-IMAGES______________________________________________ */
+/* _____________________________________	JOBS______________________________________________ */
 .jobs-images{
 	width:100%;
-	height: 200px;
+	height: 250px;
+	opacity: 1;
+
 }
+.jobcont{
+	background-color: rgba(231, 229, 229, 0.938);
+	color: black;
+}
+.jobcont a{
+	color: black;
+}
+.jobcont a:hover{
+	text-decoration: none;
+}
+/* ________________________________________________________________________________________________________ */
+textarea{
+	height: 300px;
+}
+textarea.form-control{
+	height: 500px;
+}
+/* _________________________________	SHOWPAGE___________________________________________________ */
+.showpage{
+	background-color:rgba(231, 229, 229, 0.938) ;
+}
+.showdiv{
+	border: solid 30px rgb(165, 164, 164);
+	background-color: white;
+	color: black;
+	padding: 100px;
+	font-weight: 400;
+}
+.showdiv p{
+	font-size: 20px;
+	line-height: 2rem;
+	font-weight: 400;
+
+}
+.logsi{
+	margin: 20px;
+	border: solid rgb(2, 161, 2) 1px;
+	
+}
+.logsi a{
+	color: rgb(2, 161, 2);
+}
+.flex-row-reverse i{
+	margin: 20px;
+	font-size: 20px;
+	
+}
+#search1{
+	display: block;
+	
+}
+#search1 a{
+	color: white;
+}
+#search2{
+	display: none;
+	
+}
+#search2 a{
+	color: white;
+}
+#search2 input{
+	border: none;
+	border-bottom: black solid 1px;
+	background-color: rgba(231, 229, 229, 0);
+
+}
+/* ________________________________________background___________________________________________________ */
+#bod{
+background-color: rgba(7, 7, 70, 0.575);
+}
+
+#maindiv{
+	color: white;
+	margin-left: 15%;
+	margin-right: 15%;
+	opacity: 1;
+	
+}
+/* _____________________________________________NAV_______________________________________________ */
+nav a{
+	color: white;
+	opacity: 1;
+	font-size: 18px;
+	transition: all 0.5s;
+	font-weight: 400;
+}
+nav a :hover{
+	color: grey;
+}
+.navbar-brand{
+	letter-spacing: 0.5rem;
+	margin: 0;
+	font-size: 35px;
+	color: rgba(159, 203, 245, 0.774);
+	text-shadow: 3px 4px rgb(24, 5, 56);
+	font-family: 'Roboto Slab', serif;
+}
+/* ____________________________________________HOME______________________________________________________ */
+#home{
+	font-family: 'Libre Baskerville', serif;
+	font-weight: 700;
+	color: white;
+	opacity: 1;
+	font-size: 60px;
+}
+#home2{
+	font-family: 'Libre Baskerville', serif;
+	font-weight: 400;
+	font-size: 50px;
+}
+

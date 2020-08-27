@@ -12,7 +12,8 @@ app.set('view engine','ejs');
 var jobsSchema=new mongoose.Schema({
     name:String,
     image:String,
-    description:String
+    description:String,
+    created:{type:Date, default:Date.now}
 });
 
 var Jobs=mongoose.model("Jobs",jobsSchema);
@@ -59,6 +60,30 @@ app.get('/jobs',function(req,res){
         }
     })
     
+});
+
+app.get('/jobs/new',function(req,res){
+    res.render('jobs/new');
+})
+
+app.post('/jobs',function(req,res){
+ 
+    var newJob=req.body.job;
+    Jobs.create(newJob,function(err,newlycreated){
+        if(err)
+            console.log(err);
+        else
+            res.redirect('/jobs');    
+    })
+});
+
+app.get('/jobs/:id',function(req,res){
+    Jobs.findById(req.params.id,function(err,foundJob){
+        if(err)
+            console.log(err);
+        else
+            res.render('jobs/show',{job:foundJob})
+    })
 });
 
 app.get('/internship',function(req,res){
