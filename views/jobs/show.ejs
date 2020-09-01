@@ -1,15 +1,20 @@
 <%-include('../partials/header')%>
 <div class="showpage">
     <div class="d-flex flex-row-reverse ">
-        <div class="px-2 logsi"><a href="#">login/signup</a></div>
+        <div class="px-2 logsi"><a  id="trigger_popup_fricc2">login/signup</a></div>
         <div id="search1" class="px-2 "><a href="#"><i class="fas fa-search"></a></i></div>
         <div id="search2"><i class="fas fa-search"></i><input type="text" placeholder="search"><a href="#"><i id="cross" class="fas fa-times"></i></a></div>
     </div>
     <div class="showdiv">
         <span>TheReferralRoom<i class="fas fa-crown"></i></span>.<%= job.created.toDateString() %>
         <h1 class="py-5"><%=job.name%></h1>
-        <p ><%=job.description%></p>
+        <p ><%-job.description%></p>
+        <p>Click here:- <a href="#">Apply</a></p>
+    <hr>
+    <a href="#"> <i class="mx-1 mr-4 fab fa-facebook-f"></i></a><a href="#"> <i class="mx-1 mr-4 fab fa-twitter"></i></a><a href="#"><i class="mx-1 mr-4 fab fa-linkedin-in"></i></a><a href="#"><i class="mx-1 mr-4 fas fa-link"></i></a>
+    <hr>
     </div>
+    
 </div>
 
 

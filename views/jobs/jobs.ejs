@@ -2,28 +2,35 @@
 
 <div class="row justify-content-center">
     <div class="text-center my-5 col-12">
-        <h2 class="display-4">Vacancies from top companies all at one place.</h2>
+        <h2 class="display-4 bowlby">Vacancies from top companies all at one place.</h2>
         <br>
-        <h1>Looking for something more ?
+        <h1 class="sriracha">Looking for something more ?
             Please mail it up..</h1>    
     </div>
 </div>
-
+<p class="text-right"><input type="text" class="no-outline" placeholder="what are you looking for?"></p>
+<div class="d-flex flex-column-reverse">
 <% jobs.forEach(function(job){%>
-<div class="row justify-content-center my-5 " >
+<div class="row justify-content-center my-5 jobcont" >
     <div class="col-6 p-0 "><a href="/jobs/<%=job._id%>"><img class="jobs-images" src="<%=job.image%>" alt="image" ></a></div>
-    <div class="col-6 p-4 jobcont" ><a href="/jobs/<%=job._id%>"><h4><%=job.name%></h4></a>
+    <div class="col-6 p-4 " >
+        <span>TheReferralRoom<i class="fas fa-crown"></i></span><br>
         <span ><%= job.created.toDateString() %></span>
+        <a href="/jobs/<%=job._id%>"><h4><%=job.name%></h4></a>
+        
        
         <p>
-            <br>
-            <a href="/jobs/<%=job._id%>"><%=job.description.substring(0,100);%>...</a>
+            
+            <a href="/jobs/<%=job._id%>"><%-job.description.substring(0,100);%>...</a>
+            
         </p>
-        
+        <hr>
+            <a href="/jobs/<%=job._id%>"><span>write a comment</span></a>
     </div>
 
 </div>
 <% })%>
+</div>
 <a href="/jobs/new">enter new job</a>
 
 

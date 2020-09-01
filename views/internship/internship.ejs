@@ -1,27 +1,54 @@
 <%-include('../partials/header')%>
 
 <div class="row justify-content-center">
-    <div class="text-center my-5 col-12">
-        <h2 class="display-4">Getting that first internship is a dream come true ?
+    <div class="text-center my-5 col-10">
+        <h2 class="display-4 bowlby">Getting that first internship is a dream come true ?
         </h2>
         <br>
-        <h1>Lets make it happen together.</h1>    
+        <h1 class="sriracha">Lets make it happen together.</h1>    
     </div>
 </div>
-<p class="text-right"><input type="text" placeholder="what are you looking for?"></p>
-<% internships.forEach(function(internship){%>
-<div class="row justify-content-center my-5">
+<p class="text-right"><input class="no-outline" type="text" placeholder="what are you looking for?"></p>
+<div class="d-flex flex-column-reverse">
+    <% internship.forEach(function(internship){%>
+    <div class="row justify-content-center my-5 internshipcont" >
+
+       <% if(!internship.image){%>
+        <div class="col-12 p-4 " >
+            <span>TheReferralRoom<i class="fas fa-crown"></i></span><br><span ><%= internship.created.toDateString() %></span>
+            <a href="/internship/<%=internship._id%>"><h4><%=internship.name%></h4></a>
+            
+           
+            <p>
+                <a href="/internship/<%=internship._id%>"><%-internship.description.substring(0,100);%>...</a>
+            </p>
+            <hr>
+            <a href="/internship/<%=internship._id%>"><span>write a comment</span></a>
+            
+        </div>
+        <%}else{%>
+            <div class="col-6 p-0 "><a href="/internship/<%=internship._id%>"><img class="internship-images" src="<%=internship.image%>" alt="image" ></a></div>
+        <div class="col-6 p-4 " >
+            <span>TheReferralRoom<i class="fas fa-crown"></i></span><br><span ><%= internship.created.toDateString() %></span>
+            <a href="/internship/<%=internship._id%>"><h4><%=internship.name%></h4></a>
+            
+           
+            <p>
+                <a href="/internship/<%=internship._id%>"><%-internship.description.substring(0,100);%>...</a>
+                
+            </p>
+            <hr>
+            <a href="/internship/<%=internship._id%>"><span>write a comment</span></a>
+            
+        </div>
+        <%}%>
+
+        
     
-    <div class="col-12">
-        <h6>The Referral Room</h6>
-        <h4><%=internship.name%></h4>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, exercitationem!</p>
-        <hr>
-    <p>write a comment</p>
     </div>
-    
-</div>
-<% })%>
+    <% })%>
+    </div>
+    <a href="/internship/new">enter new internship</a>
 
 
 <%-include('../partials/footer')%>

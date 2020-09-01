@@ -1,6 +1,6 @@
 <%-include('partials/header')%>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center hiring mt-5">
     <div class="text-center my-5 col-9">
         <h1 class="display-2" id="home">Hiring was never so Easy</h1>
         <br>
@@ -8,5 +8,86 @@
         <h3 class="display-4" id="home2">Lets Hunt and Convert them Together.</h3>
     </div>
 </div>
+<div class="homesec2">
+            <div class="text-center my-4">
+                <h3 class="display-4" >WHAT PEOPLE SAY</h3>
+            </div>
+
+        <div class="slideshow-container my-5">
+
+            <div class="mySlides fade " style="text-align:center">
+            <h2>Amrita Tayal</h2>
+               <h6> Intern at DHFL PRAMERICA LIFE INSURANCE</h6>
+            <div class="text my-5">I came  across this page"The Referral Room " just a week ago and already thankful to the team for the support they provide to the candidates who are actively looking for jobs/internships.
+                Please follow this page to have an amazing experience throughout your journey of finding a dream job</div>
+            </div>
+            
+            <div class="mySlides fade " style="text-align:center">
+            <h2>Aniket Narang</h2>
+               <h6> Actuarial Intern at HDFC ERGO</h6>
+            <div class="text my-5">
+                During the times of Covid - 19 many people have lost their jobs and many people are loosing their jobs on a daily basis. It is becoming tough to land for different opportunities and getting those interview calls. Moreover many times small errors in resume make our chances more slim. (1/2)</div>
+            </div>
+            
+            <div class="mySlides fade " style="text-align:center">
+            <h2>Aniket Narang</h2>
+             <h6>   Actuarial Intern at HDFC ERGO</h6>
+            <div class="text my-5">
+                Then there comes The Referral Room . They have helped me completely to shape up my resume.
+                Apart from that I had interacted with them before also and the persons behind this good initiative have helped me immensely during my times of searching job / internship. They will help you in any way they can. (2/2)</div>
+            </div>
+
+            <div class="mySlides fade " style="text-align:center">
+                <h2>Shubham Jain</h2>
+                 <h6>  Actuarial Management Trainee at WNS Global Services</h6>
+                <div class="text my-5">
+                    After searching for my first job from past 2 years finally I am happy to share that I got my first job. The referral room helped me throughout the selection process. These guys are really helpful and I really appreciate their efforts they put to help me. It is really a great initiative and I would like to thank the whole team for this
+                </div>
+            </div>    
+            
+        
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div>
+            <br>
+
+            <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            </div>
+</div>
+    
+
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
 
 <%-include('partials/footer')%>
