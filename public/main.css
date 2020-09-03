@@ -1,4 +1,4 @@
-/** code by webdevtrick ( https://webdevtrick.com ) **/
+/** code by webdevtrick ( https://webdevtrick.com )maindiv **/
 body{
 	/* background-color: rgb(112, 111, 111); */
 	font-family: 'Lato', sans-serif;
@@ -172,6 +172,15 @@ textarea.form-control{
 	padding: 100px;
 	font-weight: 400;
 }
+@media only screen and (max-width:700px){
+	.showdiv{
+		border: solid 10px rgb(185, 183, 183);
+		background-color: white;
+		color: black;
+		padding: 10px;
+		font-weight: 400;
+	}
+}
 .showdiv p{
 	font-size: 20px;
 	line-height: 2rem;
@@ -226,6 +235,13 @@ background-color: rgba(7, 7, 70, 0.575);
 	opacity: 1;
 	
 }
+@media only screen and (max-width: 990px) {
+	#maindiv{
+		margin-left: 1%;
+		margin-right: 1%;
+		
+	}
+  }
 /* _____________________________________________NAV_______________________________________________ */
 nav a{
 	color: white;
@@ -428,7 +444,7 @@ nav{
     border-radius: 8px;
     padding: 15px 5%;
 }
-#popupCloseButton {
+.popupCloseButton {
     background-color: #fff;
     border: 3px solid #999;
     border-radius: 50px;
@@ -445,7 +461,7 @@ nav{
     height: 30px;
     text-align: center;
 }
-#popupCloseButton:hover {
+.popupCloseButton:hover {
     background-color: #ccc;
 }
 #trigger_popup_fricc, #trigger_popup_fricc2, #trigger_popup_fricc3 {
@@ -488,4 +504,15 @@ nav{
       .formContainer .btn:hover,
       .openButton:hover {
         opacity: 1;
-      }
+	  }
+	  /* __________________________________________REFERRAL ______________________________________________ */
+	  .referralform input{
+		  width: 80%;
+		  background-color: rgba(255, 192, 203, 0.021);
+		  border: none;
+		  color: white;
+		  border-bottom: 2px solid rgb(73, 142, 247);
+	  }
+	  .referralform .chosefile{
+		  width: 80%;
+	  }

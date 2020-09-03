@@ -1,0 +1,36 @@
+
+    <div id="hover_bkgr_fricc">
+      <span id="helper"></span>
+      <div>
+        <div class="popupCloseButton">&times;</div>
+        <form action="/login" class="formContainer" method="POST">
+               
+                <!-- <label for="email">
+                  <strong>E-mail</strong>
+                </label> -->
+                <input type="text" id="email" placeholder="username" name="username" required>
+                <!-- <label for="psw">
+                  <strong>Password</strong>
+                </label> -->
+                <input type="password" id="psw" placeholder="password" name="password" required>
+                <button type="submit" class="btn btn-success">Log in</button>
+                
+            <button type="submit" formaction="/register" class="btn btn-outline-success">Sign-up</button>
+              </form>
+        </div>
+    </div>
+    
+    <script>
+ document.getElementById("trigger_popup_fricc").addEventListener('click',function(){
+    document.getElementById("hover_bkgr_fricc").style.display = "block";
+});
+    document.getElementById("trigger_popup_fricc2").addEventListener('click',function(){
+        document.getElementById("hover_bkgr_fricc").style.display = "block";
+    });
+    document.querySelector(".popupCloseButton").addEventListener('click',function(){
+        document.getElementById("hover_bkgr_fricc").style.display = "none";
+    });
+
+
+
+    </script>

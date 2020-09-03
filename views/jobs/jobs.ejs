@@ -12,8 +12,8 @@
 <div class="d-flex flex-column-reverse">
 <% jobs.forEach(function(job){%>
 <div class="row justify-content-center my-5 jobcont" >
-    <div class="col-6 p-0 "><a href="/jobs/<%=job._id%>"><img class="jobs-images" src="<%=job.image%>" alt="image" ></a></div>
-    <div class="col-6 p-4 " >
+    <div class="col-md-6 p-0 "><a href="/jobs/<%=job._id%>"><img class="jobs-images" src="<%=job.image%>" alt="image" ></a></div>
+    <div class="col-md-6 p-4 " >
         <span>TheReferralRoom<i class="fas fa-crown"></i></span><br>
         <span ><%= job.created.toDateString() %></span>
         <a href="/jobs/<%=job._id%>"><h4><%=job.name%></h4></a>

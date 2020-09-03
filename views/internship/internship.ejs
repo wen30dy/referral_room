@@ -14,7 +14,7 @@
     <div class="row justify-content-center my-5 internshipcont" >
 
        <% if(!internship.image){%>
-        <div class="col-12 p-4 " >
+        <div class="col-md-12 p-4 " >
             <span>TheReferralRoom<i class="fas fa-crown"></i></span><br><span ><%= internship.created.toDateString() %></span>
             <a href="/internship/<%=internship._id%>"><h4><%=internship.name%></h4></a>
             
@@ -27,8 +27,8 @@
             
         </div>
         <%}else{%>
-            <div class="col-6 p-0 "><a href="/internship/<%=internship._id%>"><img class="internship-images" src="<%=internship.image%>" alt="image" ></a></div>
-        <div class="col-6 p-4 " >
+            <div class="col-md-6 p-0 "><a href="/internship/<%=internship._id%>"><img class="internship-images" src="<%=internship.image%>" alt="image" ></a></div>
+        <div class="col-md-6 p-4 " >
             <span>TheReferralRoom<i class="fas fa-crown"></i></span><br><span ><%= internship.created.toDateString() %></span>
             <a href="/internship/<%=internship._id%>"><h4><%=internship.name%></h4></a>
             

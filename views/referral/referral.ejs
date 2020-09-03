@@ -1,16 +1,86 @@
 <%-include('../partials/header')%>
-
+<style>
+    ::placeholder {
+      color: white;
+      opacity: 1; /* Firefox */
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: white;
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+     color: white;
+    }
+    </style>
 <div class="row justify-content-center">
-    <div class="text-center my-5 col-12">
+    <div class="text-center my-5 col-10">
         <h2 class="display-4">P2P hiring made easier</h2>
         <br>
         <p style="font-size: 30px;">Now supplement your regular income by the
             referral bonus your company pays you by
             posting the Internal Vacancies for Jobs or Internships here.<p>   
         <br>
-        <h2>Find all the internal openings and get referred
+        <h2>Find all the internal openings and get referwhite
             by employees of the company as 65% of the
             openings close through internal referrals.</h2> 
+    </div>
+</div>
+<div class="row justify-content-around">
+    <div class="col-5 text-center referralform">
+        <h2>Upload Resume</h2>
+        <form action="" >
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Name...">
+            </div>
+            <div class="form-group">
+                <input type="text" name="number" placeholder="Number...">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email id...">
+            </div>
+            <div class="form-group">
+                <input type="text" name="position" placeholder="Interested position...">
+            </div>
+            
+            
+            
+        </form>
+        <div class="row justify-content-center">
+            <div class="col-8 text-center">
+                <button class="btn btn-primary chosefile">choose file</button>
+                <p>Max File Size 15MB <br>
+                    Please Wait till you get Success Dialog Box.</p>
+            </div>
+            <div class="col-2 mr-4">
+                <button class="btn btn-success">>></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-5 text-center">
+        <h2>Upload Vacancies</h2>
+        <form action="" class="referralform">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Name...">
+            </div>
+            
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email id...">
+            </div>
+            <div class="form-group">
+                <input type="text" name="number" placeholder="Roles available...">
+            </div>
+            <div class="form-group">
+                <input type="text" name="position" placeholder="Linkedin profile link...">
+            </div>
+            <div class="form-group">
+                <input type="text" name="position" placeholder="Job location...">
+            </div>
+            <div class="form-group">
+                <input type="text" name="position" placeholder="Job description...">
+            </div>
+            <button class="btn btn-success">>></button>
+        </form>
     </div>
 </div>
 
