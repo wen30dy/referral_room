@@ -164,12 +164,16 @@ app.get('/referral',function(req,res){
     res.render('referral/referral');
 });
 // ____________________________________ REGISTER___________________________________________________
+app.get('/signup',function(req,res){
+    
+    res.render('signup');
+})
 app.post('/register',function(req,res){
     var newUser=({username:req.body.username});
     User.register(newUser,req.body.password,function(err,user){
         if(err){
             console.log(err);
-            res.redirect('back');
+            res.send('try different username or password');
         }else{
             passport.authenticate("local")(req,res,function(){
                 res.redirect('/');

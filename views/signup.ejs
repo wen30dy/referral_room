@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        
+        <script src="https://kit.fontawesome.com/cad170d8f3.js" crossorigin="anonymous"></script>
+      
+        <style>
+          #form2{
+            display: none;
+          }
+          #form3{
+            display: none;
+          }
+          input{
+            width: 100%;
+          }
+        </style>
+</head>
+<body>
+    <div class="row justify-content-center">
+        <div class="col-10 col-sm-7 col-md-3 text-center">
+            <h1>Sign-up</h1>
+    
+                <form action="/register" method="POST">
+                  <div id="form1">
+                        <div class="form-group">
+                          <input type="text" id="name" placeholder="username" name="username" required>
+                      </div>
+                        <div class="form-group">
+                            <input type="text" id="number" placeholder="number" name="number" >
+                        </div>
+                      <div class="form-group">
+                        <input type="text" id="email" placeholder="email" name="email" >
+                    </div>
+                      <div class="form-group">
+                          <input type="password" id="psw" placeholder="password" name="password" required>
+                      </div>
+                      <a id="form1next" class="btn btn-warning">next</a>
+                  </div>
+                  <!-- __________________________________ -->
+                    <div id="form2">
+                      <label for="education">Education qualification</label>
+                    <div class="form-group" id="education">
+                        
+                            <div class="form-group">
+                                <input type="text" id="Institution-name" placeholder="Institution name" name="Institution-name" >
+                            </div>
+                            <div class="form-group">
+                                <label for="year">Year</label>
+                                <div class="form-row justify-content-between" id="year">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">From</label>
+                                        <select id="inputState" class="form-control">
+                                          <option selected>Choose...</option>
+                                          <option>...</option>
+                                        </select>
+                                      </div>
+                                    <div class="form-group col-md-4">
+                                      <label for="inputState">To</label>
+                                      <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>...</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                            </div>
+                            
+                            <select class="form-control"  name="degree" >
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                          <label for="experience">Experience</label>
+                          <div class="form-group" id="experience">
+                            <select class="form-control"  name="degree" >
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                        </div>
+
+                          <a id="form1prev" class="btn btn-outline-warning">prev</a>
+                          <a id="form2next" class="btn btn-warning">next</a>
+                    </div>
+                    <!-- _____________________________________________ -->
+                    <div id="form3">
+                          <div class="form-group">
+                            <input type="text" id="skills" placeholder="skills" name="skills" >
+                        </div>
+                          <div class="form-group">
+                              <input type="text" id="job-profile" placeholder="job-profile" name="job-profile" >
+                          </div>
+                          <div class="form-group">
+                            <input type="text" id="Expertise" placeholder="Area of Expertise" name="Expertise" >
+                        </div>
+                          <div class="form-group">
+                              <input type="text" id="location" placeholder="location" name="location" >
+                          </div>
+                          <div class="form-group">
+                            <input type="text" id="language" placeholder="language known" name="language" >
+                        </div>
+                        <a id="form2prev" class="btn btn-outline-warning">prev</a>
+                        <button type="submit" class="btn btn-success">sign up</button>
+                    </div>
+                  </form>
+          </div>
+        </div>
+    </div>
+ <script>
+   const form1=document.querySelector('#form1');
+   const form2=document.querySelector('#form2');
+   const form3=document.querySelector('#form3');
+   function display()
+   {
+      form1.style.display="none";
+      form2.style.display="none";
+      form3.style.display="none";
+   }
+   document.querySelector('#form1next').addEventListener('click',function(){
+      display();
+      form2.style.display="block";
+   })
+   document.querySelector('#form2next').addEventListener('click',function(){
+      display();
+      form3.style.display="block";
+   })
+   document.querySelector('#form1prev').addEventListener('click',function(){
+      display();
+      form1.style.display="block";
+   })
+   document.querySelector('#form2prev').addEventListener('click',function(){
+      display();
+      form2.style.display="block";
+   })
+ </script>   
+
+</body>
+</html>
+
+   
