@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cad170d8f3.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/cad170d8f3.js" crossorigin="anonymous"></script>
       
         <style>
+          h1, a, button{
+            font-family: 'Black Ops One', cursive;
+          }
+          h1 {
+            text-shadow: 4px 4px rgba(3, 3, 88, 0.288);
+          }
           #form2{
             display: none;
           }
@@ -19,58 +26,93 @@
           input{
             width: 100%;
           }
+          body{
+            background-color: rgba(3, 3, 88, 0.555);
+          }
+          label{
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            font-family: 'Cormorant Garamond', serif;
+
+          }
+          #form1, #form2, #form3{
+            background-color: rgba(3, 3, 88, 0.288);
+            border: rgba(255, 255, 255, 0.616) solid 2px;
+            border-radius: 10px;
+            border: none;
+          padding: 10px;
+          box-shadow: 5px 10px 20px rgba(224, 224, 252, 0.514) inset;
+          }
+          #form1 div{
+            height: 18%;
+          }
+          
+          #form1 input, #form2 input, #form2 select, #form3 input, #form3 select{
+            height: 45px;
+            border: none;
+            border-radius: 10px;
+            border: solid rgb(202, 202, 202) 2px;
+          }
+          *:focus{
+            outline-color:rgba(3, 3, 88, 0.555) ;
+          }
+          
         </style>
 </head>
+
 <body>
     <div class="row justify-content-center">
-        <div class="col-10 col-sm-7 col-md-3 text-center">
-            <h1>Sign-up</h1>
+        <div class="col-10 col-sm-7 col-md-5 col-xl-4 text-center">
+            <h1 class="mt-4"> Sign-up</h1>
     
-                <form action="/register" method="POST">
-                  <div id="form1">
-                        <div class="form-group">
+                <form action="/register" method="POST" class="my-5">
+                  <div id="form1" class="p-4">
+                    <label>Contact</label>
+                      <div class="form-group my-4">
                           <input type="text" id="name" placeholder="username" name="username" required>
                       </div>
-                        <div class="form-group">
+                        <div class="form-group my-4">
                             <input type="text" id="number" placeholder="number" name="number" >
                         </div>
-                      <div class="form-group">
+                      <div class="form-group my-4">
                         <input type="text" id="email" placeholder="email" name="email" >
                     </div>
-                      <div class="form-group">
+                      <div class="form-group my-4">
                           <input type="password" id="psw" placeholder="password" name="password" required>
                       </div>
-                      <a id="form1next" class="btn btn-warning">next</a>
+                      <a id="form1next" class="btn btn-warning">next <i class="fas fa-angle-double-right"></i></a>
                   </div>
                   <!-- __________________________________ -->
-                    <div id="form2">
+                    <div id="form2" class="p-4">
                       <label for="education">Education qualification</label>
                     <div class="form-group" id="education">
                         
                             <div class="form-group">
-                                <input type="text" id="Institution-name" placeholder="Institution name" name="Institution-name" >
+                                <input type="text" id="Institution" placeholder="Institution name" name="Institution" >
                             </div>
                             <div class="form-group">
-                                <label for="year">Year</label>
+                                <label for="year" class="my-1">Year</label>
                                 <div class="form-row justify-content-between" id="year">
-                                    <div class="form-group col-md-4">
-                                        <label for="inputState">From</label>
-                                        <select id="inputState" class="form-control">
-                                          <option selected>Choose...</option>
+                                    <div class="form-group col-5 col-md-4">
+                                        
+                                        <select id="inputState" class="form-control" name="eduFrom">
+                                          
+                                          <option selected>From</option>
                                           <option>...</option>
                                         </select>
                                       </div>
-                                    <div class="form-group col-md-4">
-                                      <label for="inputState">To</label>
-                                      <select id="inputState" class="form-control">
-                                        <option selected>Choose...</option>
+                                    <div class="form-group col-5 col-md-4">
+                                      <select id="inputState" class="form-control" name="eduTo">
+                                        <option selected>To</option>
                                         <option>...</option>
                                       </select>
                                     </div>
                                   </div>
                             </div>
                             
-                            <select class="form-control"  name="degree" >
+                            <select class="form-control"  name="degree"  >
+                              <option>Degree</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -79,8 +121,8 @@
                             </select>
                           </div>
                           <label for="experience">Experience</label>
-                          <div class="form-group" id="experience">
-                            <select class="form-control"  name="degree" >
+                          <div class="form-group" id="experience" >
+                            <select class="form-control"  name="experience" >
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -89,27 +131,27 @@
                             </select>
                         </div>
 
-                          <a id="form1prev" class="btn btn-outline-warning">prev</a>
-                          <a id="form2next" class="btn btn-warning">next</a>
+                          <a id="form1prev" class="btn btn-outline-warning"><i class="fas fa-angle-double-left"></i> prev</a>
+                          <a id="form2next" class="btn btn-warning ">next <i class="fas fa-angle-double-right"></i></a>
                     </div>
                     <!-- _____________________________________________ -->
-                    <div id="form3">
-                          <div class="form-group">
+                    <div id="form3" class="p-4">
+                          <div class="form-group my-4">
                             <input type="text" id="skills" placeholder="skills" name="skills" >
                         </div>
-                          <div class="form-group">
-                              <input type="text" id="job-profile" placeholder="job-profile" name="job-profile" >
+                          <div class="form-group my-4">
+                              <input type="text" id="job-profile" placeholder="job-profile" name="profile" >
                           </div>
-                          <div class="form-group">
+                          <div class="form-group my-4">
                             <input type="text" id="Expertise" placeholder="Area of Expertise" name="Expertise" >
                         </div>
-                          <div class="form-group">
+                          <div class="form-group my-4">
                               <input type="text" id="location" placeholder="location" name="location" >
                           </div>
-                          <div class="form-group">
+                          <div class="form-group my-4">
                             <input type="text" id="language" placeholder="language known" name="language" >
                         </div>
-                        <a id="form2prev" class="btn btn-outline-warning">prev</a>
+                        <a id="form2prev" class="btn btn-outline-warning"><i class="fas fa-angle-double-left"></i> prev</a>
                         <button type="submit" class="btn btn-success">sign up</button>
                     </div>
                   </form>

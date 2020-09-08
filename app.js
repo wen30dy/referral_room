@@ -8,6 +8,7 @@ var express=require('express'),
     Internship=require('./models/internship'),
     Openings=require('./models/openings'),
     User=require('./models/user');
+    // seedDB      = require("./seed");
 
 mongoose.connect("mongodb://localhost:27017/ReferralRoom",{useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -32,19 +33,7 @@ app.use(function(req,res,next){
 });
 // __________________________________________JOBS______________________________________________
 
-// Jobs.create( {
-//         name:"Business Finance - Financial Planning & Analysis - Associate Job in Bengaluru at Goldmansachs",
-//         image:"https://static.vecteezy.com/system/resources/previews/000/110/770/original/casino-logos-elements-vector.jpg", 
-//         description:"Finance Planning & Analysis (“FP&A) is responsible for effectively managing the firm’s forward-looking business planning and strategic transformation initiatives. Our team collaborates with each of the firm’s businesses, Controllers, Corporate Treasury, Risk, among other groups at the firm, to gain the expertise required to provide critical analysis to project and forecast financial results. We use our expertise to execute strategic initiatives to provide internal clients, such as firm and divisional leadership, access to financial information more efficiently and effectively. Professionals in the Finance division have an analytical mindset, exhibit intellectual curiosity and are from diverse academic backgrounds."
-//         },
-// function(err,job){
-//     if(err)
-//         console.log(err);
-//     else{
-//         console.log("job created");
-//         console.log(job);
-//     }
-// });
+
 
 
 app.get('/',function(req,res){
@@ -169,7 +158,21 @@ app.get('/signup',function(req,res){
     res.render('signup');
 })
 app.post('/register',function(req,res){
-    var newUser=({username:req.body.username});
+    var newUser=({
+            username        :req.body.username,
+            number          :req.body.number,
+            email           :req.body.email,
+            institute       :req.body.Institution,
+            eduFrom         :req.body.eduFrom,
+            eduTo           :req.body.eduTo,
+            degree          :req.body.degree,
+            experience      :req.body.experience,
+            skill           :req.body.skills,
+            jobProfile      :req.body.profile,
+            expertise       :req.body.Expertise,
+            location        :req.body.location,
+            language        :req.body.language
+        });
     User.register(newUser,req.body.password,function(err,user){
         if(err){
             console.log(err);
