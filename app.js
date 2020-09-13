@@ -10,6 +10,10 @@ var express=require('express'),
     User=require('./models/user');
     // seedDB      = require("./seed");
 
+var jobsRoutes=require('./routes/jobs'),
+    internshipRoutes=require('./routes/internship'),
+    openingRoutes=require('./routes/openings');
+
 mongoose.connect("mongodb://localhost:27017/ReferralRoom",{useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -31,6 +35,10 @@ app.use(function(req,res,next){
     res.locals.currentUser=req.user;
     next();
 });
+
+app.use(jobsRoutes);
+app.use(internshipRoutes);
+app.use(openingRoutes);
 // __________________________________________JOBS______________________________________________
 
 
@@ -40,113 +48,15 @@ app.get('/',function(req,res){
     res.render('home');
 });
 
-app.get('/jobs',function(req,res){
-    Jobs.find({},function(err,jobs){
-        if(err)
-            console.log(err);
-        else{
-            res.render('jobs/jobs',{jobs:jobs});
-        }
-    })
-    
-});
 
-app.get('/jobs/new',function(req,res){
-    res.render('jobs/new');
-})
-
-app.post('/jobs',function(req,res){
- 
-    var newJob=req.body.job;
-    Jobs.create(newJob,function(err,newlycreated){
-        if(err)
-            console.log(err);
-        else
-            res.redirect('/jobs');    
-    })
-});
-
-app.get('/jobs/:id',function(req,res){
-    Jobs.findById(req.params.id,function(err,foundJob){
-        if(err)
-            console.log(err);
-        else
-            res.render('jobs/show',{job:foundJob})
-    })
-});
 // ______________________________________________INTERNSHIP______________________________________
 
 
 
-app.get('/internship',function(req,res){
-    Internship.find({},function(err,internship){
-        if(err)
-            console.log(err);
-        else{
-            res.render('internship/internship',{internship:internship});
-        }
-    })
-});
-
-app.get('/internship/new',function(req,res){
-    res.render('internship/new');
-})
-
-app.post('/internship',function(req,res){
- 
-    var newInternship=req.body.internship;
-    Internship.create(newInternship,function(err,newlycreated){
-        if(err)
-            console.log(err);
-        else
-            res.redirect('/internship');    
-    })
-});
-
-app.get('/internship/:id',function(req,res){
-    Internship.findById(req.params.id,function(err,foundInternship){
-        if(err)
-            console.log(err);
-        else
-            res.render('internship/show',{internship:foundInternship})
-    })
-});
 // _______________________________________________INTERNAL OPENINGS__________________________________
 
 
-app.get('/internal-openings',isLoggedIn,function(req,res){
-    Openings.find({},function(err,openings){
-        if(err)
-            console.log(err);
-        else{
-            res.render('openings/openings',{opening:openings});
-        }
-    })
-});
 
-app.get('/internal-openings/new',function(req,res){
-    res.render('openings/new');
-})
-
-app.post('/internal-openings',function(req,res){
- 
-    var newopening=req.body.opening;
-    Openings.create(newopening,function(err,newlycreated){
-        if(err)
-            console.log(err);
-        else
-            res.redirect('/internal-openings');    
-    })
-});
-
-app.get('/internal-openings/:id',function(req,res){
-    Openings.findById(req.params.id,function(err,foundopening){
-        if(err)
-            console.log(err);
-        else
-            res.render('openings/show',{opening:foundopening})
-    })
-});
 // _____________________________________REFERRAL______________________________________________
 
 app.get('/referral',function(req,res){
@@ -203,7 +113,7 @@ function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-    res.redirect("/");
+    res.redirect("/signup");
 }
 
 app.listen(3000,function(){
