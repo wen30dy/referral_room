@@ -10,6 +10,7 @@ var UserSchema = new mongoose.Schema({
     eduFrom:String,
     eduTo:String,
     degree:String,
+    more:String,
     experience:String,
     skill:String,
     jobProfile:String,

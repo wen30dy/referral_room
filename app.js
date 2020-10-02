@@ -47,16 +47,8 @@ app.use(openingRoutes);
 app.get('/',function(req,res){
     res.render('home');
 });
-
-
 // ______________________________________________INTERNSHIP______________________________________
-
-
-
 // _______________________________________________INTERNAL OPENINGS__________________________________
-
-
-
 // _____________________________________REFERRAL______________________________________________
 
 app.get('/referral',function(req,res){
@@ -73,9 +65,10 @@ app.post('/register',function(req,res){
             number          :req.body.number,
             email           :req.body.email,
             institute       :req.body.Institution,
-            eduFrom         :req.body.eduFrom,
-            eduTo           :req.body.eduTo,
+            eduFrom         :req.body.date1,
+            eduTo           :req.body.date2,
             degree          :req.body.degree,
+            more            :req.body.more,
             experience      :req.body.experience,
             skill           :req.body.skills,
             jobProfile      :req.body.profile,

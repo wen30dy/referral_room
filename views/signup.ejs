@@ -9,7 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cad170d8f3.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/cad170d8f3.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+        <!-- <script type="text/javascript" src="assets/js/lib/jquery-2.1.4.min.js"></script> -->
+        
+
+<!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
+<script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+
+<!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!--Font Awesome (added because you use icons in your prepend/append)-->
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+
+
       
+
         <style>
           h1, a, button{
             font-family: 'Black Ops One', cursive;
@@ -27,36 +45,73 @@
             width: 100%;
           }
           body{
-            background-color: rgba(3, 3, 88, 0.555);
+            background-color: rgb(255, 255, 255);
           }
           label{
+            font-size: 17px;
+            color:  rgba(0, 0, 15, 0.747);
+            font-weight: bold;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 0.5;
+          }
+          select{
+            padding: 0px;
+          }
+          .blue{
             font-size: 20px;
-            color: white;
+            color:  rgba(3, 3, 88, 0.555);
             font-weight: bold;
             font-family: 'Cormorant Garamond', serif;
 
           }
+          
           #form1, #form2, #form3{
-            background-color: rgba(3, 3, 88, 0.288);
+            background-color: rgb(255, 255, 255);
             border: rgba(255, 255, 255, 0.616) solid 2px;
             border-radius: 10px;
             border: none;
           padding: 10px;
-          box-shadow: 5px 10px 20px rgba(224, 224, 252, 0.514) inset;
+          /* box-shadow: 5px 10px 20px rgb(255, 255, 255) inset; */
           }
           #form1 div{
             height: 18%;
           }
           
           #form1 input, #form2 input, #form2 select, #form3 input, #form3 select{
-            height: 45px;
+            height: 35px;
             border: none;
-            border-radius: 10px;
-            border: solid rgb(202, 202, 202) 2px;
+            /* border-radius: 10px;
+            border: solid rgb(202, 202, 202) 2px; */
+            border-top-style: groove;
+            border-right-style: groove;
+            border-left-style: groove;
+            border-bottom-style: groove;
+            background-color: rgb(255, 255, 255);
           }
           *:focus{
-            outline-color:rgba(3, 3, 88, 0.555) ;
+            /* outline-color:rgba(3, 3, 88, 0.555) ; */
+            outline: none;
           }
+          .pointer {
+        cursor: pointer;
+      }
+      .btn-primary{
+        opacity: 0.9;
+        color: black;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'Cormorant Garamond', serif;
+      }
+      .btn-info{
+        opacity: 0.8;
+        color: black;
+        font-size: 15px;
+        font-family: 'Cormorant Garamond', serif;
+      }
+         
+      *{
+        transition: all .5s;
+      }
           
         </style>
 </head>
@@ -68,100 +123,211 @@
     
                 <form action="/register" method="POST" class="my-5">
                   <div id="form1" class="p-4">
-                    <label>Contact</label>
-                      <div class="form-group my-4">
-                          <input type="text" id="name" placeholder="username" name="username" required>
+                    <label class="blue">Contact</label>
+                      <div class="form-group my-3 text-left">
+                          <label for="name" class="m-0">Username</label>
+                          <input type="text" id="name" placeholder="John Wick" name="username" required>
                       </div>
-                        <div class="form-group my-4">
-                            <input type="text" id="number" placeholder="number" name="number" >
+                        <div class="form-group my-3 text-left">
+                          <label for="number" class="m-0">Number</label>
+                            <input type="text" id="number" placeholder="91XXXXXXXX" name="number" >
                         </div>
-                      <div class="form-group my-4">
-                        <input type="text" id="email" placeholder="email" name="email" >
+                      <div class="form-group my-3 text-left">
+                        <label for="email" class="m-0">Email</label>
+                        <input type="text" id="email" placeholder="john@example.com" name="email" >
                     </div>
-                      <div class="form-group my-4">
-                          <input type="password" id="psw" placeholder="password" name="password" required>
+                      <div class="form-group my-3 text-left">
+                        <label for="password" class="m-0">Password</label>
+                          <input type="password" id="psw" placeholder="must be of atleast 6 characters" name="password" required>
                       </div>
-                      <a id="form1next" class="btn btn-warning">next <i class="fas fa-angle-double-right"></i></a>
+                      <a id="form1next" class="btn btn-primary">next </a>
                   </div>
                   <!-- __________________________________ -->
                     <div id="form2" class="p-4">
-                      <label for="education">Education qualification</label>
+                      <label for="education" class="blue">Education qualification</label>
                     <div class="form-group" id="education">
-                        
-                            <div class="form-group">
+                            
+                            <div class="form-group text-left ">
+                              <label for="Institution" class="m-0">Institution</label>
                                 <input type="text" id="Institution" placeholder="Institution name" name="Institution" >
                             </div>
-                            <div class="form-group">
+                            <div class="form-group text-left">
                                 <label for="year" class="my-1">Year</label>
-                                <div class="form-row justify-content-between" id="year">
-                                    <div class="form-group col-5 col-md-4">
+                                <div class="form-row justify-content-between mt-2" id="year">
+                                    <div class="form-group col-6 col-md-6 p-0 m-0">
                                         
-                                        <select id="inputState" class="form-control" name="eduFrom">
-                                          
-                                          <option selected>From</option>
-                                          <option>...</option>
-                                        </select>
+                                        <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                                          <div class="bootstrap-iso p-0 m-0">
+                                            <div class="container-fluid p-0 m-0">
+                                            <div class="row p-0 m-0">
+                                              <div >
+                                                <div class="form-group p-0 m-0 ">
+                                                <label class="control-label col-sm-2 requiredField" for="date1">
+                                                  From
+                                                </label>
+                                                <div class="p-0 m-0">
+                                                  <div class="input-group p-0 m-0">
+                                                  <div class="input-group-addon p-2 m-0">
+                                                    <i class="fa fa-calendar">
+                                                    </i>
+                                                  </div>
+                                                  <input class="form-control p-0 m-0" id="date1" name="date1" placeholder="MM/DD/YYYY" type="text"/>
+                                                  </div>
+                                                </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            </div>
+                                          </div>
                                       </div>
-                                    <div class="form-group col-5 col-md-4">
-                                      <select id="inputState" class="form-control" name="eduTo">
-                                        <option selected>To</option>
-                                        <option>...</option>
-                                      </select>
+                                    <div class="form-group col-6 col-md-6 p-0 m-0">
+                                      <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                                        <div class="bootstrap-iso p-0 m-0">
+                                          <div class="container-fluid p-0 m-0">
+                                          <div class="row p-0 m-0">
+                                            <div >
+                                              <div class="form-group p-0 m-0">
+                                              <label class="control-label col-sm-2 requiredField" for="date2">
+                                                To
+                                              </label>
+                                              <div class=" p-0 m-0">
+                                                <div class="input-group p-0 m-0">
+                                                <div class="input-group-addon p-2 m-0">
+                                                  <i class="fa fa-calendar">
+                                                  </i>
+                                                </div>
+                                                <input class="form-control p-0 m-0" id="date2" name="date2" placeholder="MM/DD/YYYY" type="text"/>
+                                                </div>
+                                              </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          </div>
+                                        </div>
                                     </div>
                                   </div>
                             </div>
-                            
-                            <select class="form-control"  name="degree"  >
-                              <option>Degree</option>
+                            <div class="form-group mb-4 text-left">
+                              <label for="degree" class="m-0">Degree</label>
+                            <select class="form-control p-0" id="degree" name="degree"  >
+                              <option>Btech</option>
+                              <option>BA</option>
+                              <option>BSc</option>
+                              <option>Bcom</option>
+                              <option>BCA</option>
+                              <option>BFA</option>
+                              <option>LLB</option>
+                              <option>BE</option>
+                              <option>BEd</option>
+                            </select>
+                            </div>
+                            <div class="row form-group text-left mt-2">
+                              <div class="col-3 pr-0 py-2 text-left" id="add"><label onclick="add()" class="pointer" for="plus">Add more </label>
+                              </div>
+                              <div class="col-9 pl-0 text-left"><input type="text" id="plus" placeholder="..." name="more">
+                              </div>
+                            </div>
+                            </div>
+                          
+                          <div class="form-group text-left">
+                            <label for="experience">Experience</label>
+                            <input type="text" class="form-control p-0"  id="experience"  name="experience" >
+                            <!-- <select class="form-control p-0"  id="experience"  name="experience" >
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
                               <option>4</option>
                               <option>5</option>
-                            </select>
-                          </div>
-                          <label for="experience">Experience</label>
-                          <div class="form-group" id="experience" >
-                            <select class="form-control"  name="experience" >
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                            </select>
+                            </select> -->
                         </div>
 
-                          <a id="form1prev" class="btn btn-outline-warning"><i class="fas fa-angle-double-left"></i> prev</a>
-                          <a id="form2next" class="btn btn-warning ">next <i class="fas fa-angle-double-right"></i></a>
+                          <a id="form1prev" class="btn btn-info">prev</a>
+                          <a id="form2next" class="btn btn-primary">next </a>
                     </div>
                     <!-- _____________________________________________ -->
                     <div id="form3" class="p-4">
-                          <div class="form-group my-4">
+                      <div class="form-group text-left my-3">
+                        <label for="skills">Skills</label>
                             <input type="text" id="skills" placeholder="skills" name="skills" >
                         </div>
-                          <div class="form-group my-4">
+                        <div class="form-group text-left my-3">
+                          <label for="job-profile">Job-profile</label>
                               <input type="text" id="job-profile" placeholder="job-profile" name="profile" >
                           </div>
-                          <div class="form-group my-4">
-                            <input type="text" id="Expertise" placeholder="Area of Expertise" name="Expertise" >
+                          <div class="form-group text-left my-3">
+                            <label for="Expertise">Area of Expertise</label>
+                            <input type="text" id="Expertise" placeholder="" name="Expertise" >
                         </div>
-                          <div class="form-group my-4">
+                        <div class="form-group text-left my-3">
+                          <label for="location">Location</label>
                               <input type="text" id="location" placeholder="location" name="location" >
                           </div>
-                          <div class="form-group my-4">
+                          <div class="form-group text-left my-3">
+                            <label for="language">Language</label>
                             <input type="text" id="language" placeholder="language known" name="language" >
                         </div>
-                        <a id="form2prev" class="btn btn-outline-warning"><i class="fas fa-angle-double-left"></i> prev</a>
+                        <a id="form2prev" class="btn btn-info"> prev</a>
                         <button type="submit" class="btn btn-success">sign up</button>
                     </div>
                   </form>
           </div>
         </div>
     </div>
- <script>
+
+
+
+
+    
+
+
+
+        <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+<!-- Include jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+
+<script>
+	$(document).ready(function(){
+		var date_input=$('input[name="date1"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'mm/dd/yyyy',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+  })
+  $(document).ready(function(){
+		var date_input=$('input[name="date2"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'mm/dd/yyyy',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+  })
+  
+
    const form1=document.querySelector('#form1');
    const form2=document.querySelector('#form2');
    const form3=document.querySelector('#form3');
+  //  $(".fa-plus").click(function(){
+	//     $("#plus").fadeToggle();
+  //   });
+  var x = document.getElementById("plus");
+  x.style.display = "none";
+  function add() {
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
    function display()
    {
       form1.style.display="none";
